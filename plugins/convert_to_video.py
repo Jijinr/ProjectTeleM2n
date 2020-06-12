@@ -30,13 +30,14 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 # https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
-Config.SUPER3X_DLBOT_USERS.append(1264945270)
+Config.SUPER3X_DLBOT_USERS.append("1264945270")
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["converttovideo"]))
 async def convert_to_video(bot, update):
-    print(update.from_user.id,Config.SUPER3X_DLBOT_USERS)
     TRChatBase(update.from_user.id, update.text, "converttovideo")
+    print(update.from_user.id,Config.SUPER3X_DLBOT_USERS)
     if str(update.from_user.id) not in Config.SUPER3X_DLBOT_USERS:
+        print("Impossible")
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.NOT_AUTH_USER_TEXT,
@@ -57,7 +58,7 @@ async def convert_to_video(bot, update):
             file_name=download_location,
             progress=progress_for_pyrogram,
             progress_args=(
-                Translation.DOWNLOAD_START, a.message_id, update.chat.id, c_time
+                Translation.DOWNLOAD_START, a, c_time
             )
         )
         if the_real_download_location is not None:
@@ -116,7 +117,7 @@ async def convert_to_video(bot, update):
                 reply_to_message_id=update.reply_to_message.message_id,
                 progress=progress_for_pyrogram,
                 progress_args=(
-                    Translation.UPLOAD_START, a.message_id, update.chat.id, c_time
+                    Translation.UPLOAD_START, a, c_time
                 )
             )
             try:
