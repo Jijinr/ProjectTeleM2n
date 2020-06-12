@@ -30,14 +30,11 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 # https://stackoverflow.com/a/37631799/4723940
 from PIL import Image
-Config.SUPER3X_DLBOT_USERS.append("1264945270")
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["converttovideo"]))
 async def convert_to_video(bot, update):
     TRChatBase(update.from_user.id, update.text, "converttovideo")
-    print(update.from_user.id,Config.SUPER3X_DLBOT_USERS)
     if str(update.from_user.id) not in Config.SUPER3X_DLBOT_USERS:
-        print("Impossible")
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.NOT_AUTH_USER_TEXT,
