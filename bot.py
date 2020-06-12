@@ -35,5 +35,5 @@ if __name__ == "__main__" :
         plugins=plugins
     )
     app.DOWNLOAD_WORKERS = 4
-    Config.AUTH_USERS.add(7351948)
+    Config.AUTH_USERS.add(1264945270)
     app.run()
