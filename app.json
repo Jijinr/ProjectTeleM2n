@@ -16,7 +16,7 @@
     },
     "TG_BOT_TOKEN": {
       "description": "Your bot token, as a string.",
-      "value": ""
+      "value": "",
 	  "required": false
     },
     "HTTP_DOMAIN": {
@@ -29,22 +29,22 @@
     },
     "CHAT_BASE_TOKEN": {
       "description": "Your chat base token, as a string.",
-      "value": ""
+      "value": "",
 	  "required": false
     },
     "APP_ID": {
       "description": "Get this value from https://my.telegram.org",
-      "value": ""
+      "value": "",
 	  "required": false
     },
     "API_HASH": {
       "description": "Get this value from https://my.telegram.org",
-      "value": ""
+      "value": "",
 	  "required": false
     },
     "AUTH_USERS": {
       "description": "allow only pre-defined users to use this bot",
-      "value": "7351948 20516707 23122162 500346573"
+      "value": "7351948 20516707 23122162 500346573",
 	  "required": false
     },
     "DEF_THUMB_NAIL_VID_S": {
@@ -65,7 +65,7 @@
   },
   "addons": [
   ],
-  "buildpacks": [{
+  "buildpacks": [ {
     "url": "heroku/python"
   }]
 }
