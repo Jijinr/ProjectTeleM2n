@@ -17,6 +17,7 @@
     "TG_BOT_TOKEN": {
       "description": "Your bot token, as a string.",
       "value": ""
+	  "required": false
     },
     "HTTP_DOMAIN": {
       "description": "The Heroku App URL similar to https://<appname>.herokuapp.com/",
@@ -29,18 +30,22 @@
     "CHAT_BASE_TOKEN": {
       "description": "Your chat base token, as a string.",
       "value": ""
+	  "required": false
     },
     "APP_ID": {
       "description": "Get this value from https://my.telegram.org",
       "value": ""
+	  "required": false
     },
     "API_HASH": {
       "description": "Get this value from https://my.telegram.org",
       "value": ""
+	  "required": false
     },
     "AUTH_USERS": {
       "description": "allow only pre-defined users to use this bot",
       "value": "7351948 20516707 23122162 500346573"
+	  "required": false
     },
     "DEF_THUMB_NAIL_VID_S": {
       "description": "default thumbnail to be used in the videos. Incase, youtube-dl is unable to find a thumbnail.",
@@ -61,10 +66,6 @@
   "addons": [
   ],
   "buildpacks": [{
-    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-  }, {
-    "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
-  }, {
     "url": "heroku/python"
   }]
 }
