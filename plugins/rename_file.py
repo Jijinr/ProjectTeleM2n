@@ -61,18 +61,14 @@ async def rename_doc(bot, update):
             )
         )
         if the_real_download_location is not None:
-            await bot.edit_message_text(
-                text=Translation.SAVED_RECVD_DOC_FILE,
-                chat_id=update.chat.id,
-                message_id=a.message_id
-            )
-            if "IndianMovie" in the_real_download_location:
+            try:
                 await bot.edit_message_text(
-                    text=Translation.RENAME_403_ERR,
+                    text=Translation.SAVED_RECVD_DOC_FILE,
                     chat_id=update.chat.id,
                     message_id=a.message_id
                 )
-                return
+            except:
+                pass
             new_file_name = download_location + file_name
             os.rename(the_real_download_location, new_file_name)
             await bot.edit_message_text(
